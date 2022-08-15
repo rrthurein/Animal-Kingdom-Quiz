@@ -1,20 +1,21 @@
-var numberOfAnimalButtons = document.querySelectorAll(".animal").length
+//Detecting Button Press
+for (var i = 0; i<document.querySelectorAll(".animal").length; i++) {
 
-for (var i = 0; i<numberOfAnimalButtons; i++){
+document.querySelectorAll(".animal")[i].addEventListener("click", function () {
 
-document.querySelectorAll(".animal")[i].addEventListener("click", function (){
+  var buttonInnerHTML = this.innerHTML
 
-    var buttonInnerHTML = this.innerHTML;
+  makeSound(buttonInnerHTML);
 
-    makeSound(buttonInnerHTML);
-
-    buttonAnimation(buttonInnerHTML);
-
+  buttonAnimation(buttonInnerHTML);
 });
 
 }
 
+
 document.addEventListener("keydown", function(event) {
+
+  var buttonInnerHTML = this.innerHTML;
 
   makeSound(event.key);
 
@@ -25,39 +26,39 @@ document.addEventListener("keydown", function(event) {
 
 function makeSound(key) {
   switch (key) {
-    case "w":
-    var crash = new Audio('sounds/cat-noise.mp3');
-    crash.play();
+    case "c":
+    var cat = new Audio('sounds/cat-noise.mp3');
+    cat.play();
       break;
-
-    case "a":
-      var kickBass = new Audio('sounds/dog-barking.mp3');
-      kickBass.play();
-        break;
-
-      case "s":
-          var snare = new Audio('sounds/Duck-quack.mp3');
-          snare.play();
-            break;
 
       case "d":
-        var tom1 = new Audio('sounds/horse-sound.mp3');
-        tom1.play();
+      var dog = new Audio('sounds/dog-barking.mp3');
+      dog.play();
         break;
 
-    case "j":
-      var tom2 = new Audio('sounds/owl.mp3');
-      tom2.play();
+      case "e":
+          var elephant = new Audio('sounds/elephant-sound.mp3');
+          elephant.play();
+            break;
+
+      case "h":
+        var horse = new Audio('sounds/horse-sound.mp3');
+        horse.play();
+        break;
+
+    case "o":
+      var owl = new Audio('sounds/owl.mp3');
+      owl.play();
       break;
 
-      case "k":
-        var tom3 = new Audio('sounds/pig-sound.mp3');
-        tom3.play();
+      case "p":
+        var pig = new Audio('sounds/pig-sound.mp3');
+        pig.play();
         break;
 
-        case "l":
-          var tom4 = new Audio('sounds/rooster-sound.mp3');
-          tom4.play();
+        case "r":
+          var rooster = new Audio('sounds/rooster-sound.mp3');
+          rooster.play();
           break;
     default: console.log(buttonInnerHTML);
   }
